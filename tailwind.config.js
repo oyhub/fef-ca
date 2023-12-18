@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#1A4C7D",
+        secondary: "#3E84C9"
+      },
+      fontSize: {
+        "2xs": "0.7rem"
+      },
+      fontFamily: {
+        "heading": ["Roboto", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial"]
+      },
+    },
   },
   plugins: [],
 }
