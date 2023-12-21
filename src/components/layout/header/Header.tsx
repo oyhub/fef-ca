@@ -1,4 +1,5 @@
 import { ShoppingCartRounded } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 export function Header() {
 return (
@@ -12,9 +13,9 @@ return (
     </div>
     <div>
       <div className="container mx-auto flex justify-between items-center">
-        <a href="#" className="uppercase text-3xl m-2">
+        <Link to="/" className="uppercase text-3xl m-2">
           <span className="text-primary">linnus</span> <span className="bg-primary text-white px-2">fritid</span>
-        </a>
+        </Link>
         <div className="w-1/2">
           <input aria-label="Search product" type="search" placeholder="Search" className="p-2 w-full max-w-xl shadow border-1 rounded"/>
         </div>
