@@ -1,5 +1,5 @@
-import { ShoppingCartRounded } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import CartButton from '../../buttons/CartButton.tsx';
 
 export function Header() {
 return (
@@ -19,9 +19,7 @@ return (
         <div className="w-1/2">
           <input aria-label="Search product" type="search" placeholder="Search" className="p-2 w-full max-w-xl shadow border-1 rounded"/>
         </div>
-        <button className="p-1 mr-1 text-gray-500 hover:text-primary">
-          <ShoppingCartRounded />
-        </button>
+        <CartButton />
       </div>
     </div>
   </header>

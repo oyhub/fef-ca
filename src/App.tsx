@@ -4,6 +4,7 @@ import Footer from './components/layout/footer/footer.tsx';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.tsx';
 import NotFound from './pages/NotFound.tsx';
+import Checkout from './pages/Checkout.tsx';
 
 function Layout() {
   return (
@@ -23,6 +24,7 @@ function App() {
     <Routes>
       <Route path="/" element={ <Layout /> } >
         <Route index element={ <Home /> } />
+        <Route path="/checkout" element={ <Checkout /> } />
         <Route path="*" element={ <NotFound /> } />
       </Route>
     </Routes>
