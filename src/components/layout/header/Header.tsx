@@ -6,9 +6,8 @@ return (
   <header>
     <div className="text-xs font-heading uppercase w-screen bg-primary text-white p-2">
       <div className="container flex justify-end gap-8">
-        <a href="#">Contact</a>
-        <a href="#">About us</a>
-        <a href="#">+47 99 99 99 99</a>
+        <Link to="/contact" className="hover:underline">Contact</Link>
+        <a className="hover:underline" href="#">+47 99 99 99 99</a>
       </div>
     </div>
     <div>
