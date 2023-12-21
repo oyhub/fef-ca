@@ -3,7 +3,7 @@ import { FacebookRounded, Instagram } from '@mui/icons-material';
 export function Footer() {
   const thisYear = new Date().getFullYear();
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-primary text-white pt-4">
       <div className="container mx-auto">
         <div className="flex justify-between">
           <div className="font-heading text-sm p-3">
