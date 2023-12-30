@@ -14,7 +14,6 @@ export function FeatureProducts() {
       <div className="flex flex-wrap gap-5 justify-between">
         {data && data.map(product => (
           <FeatureProduct key={product.id} data={product} />
-          // <h3 key={product.id}>{product.title}</h3>
         ))}
       </div>
     </div>
