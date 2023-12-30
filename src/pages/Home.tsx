@@ -1,5 +1,11 @@
+import FeatureProducts from '../components/api/featureProducts/FeatureProducts.tsx';
+
 export function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <FeatureProducts />
+    </>
+  );
 }
 
 export default Home;
