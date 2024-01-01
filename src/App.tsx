@@ -11,7 +11,7 @@ function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="flex-grow max-w-screen-xl container mx-auto mt-4">
+      <div className="flex-grow container mx-auto px-3 mt-4">
         <Outlet />
       </div>
       <Footer />

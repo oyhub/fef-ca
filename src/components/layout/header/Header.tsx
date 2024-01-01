@@ -5,13 +5,13 @@ export function Header() {
 return (
   <header>
     <div className="text-xs font-heading uppercase w-screen bg-primary text-white p-2">
-      <div className="container max-w-screen-xl flex justify-end gap-8">
+      <div className="container px-3 flex justify-end gap-8">
         <Link to="/contact" className="hover:underline">Contact</Link>
         <a className="hover:underline" href="#">+47 99 99 99 99</a>
       </div>
     </div>
     <div>
-      <div className="container max-w-screen-xl flex justify-between items-center">
+      <div className="container px-3 flex justify-between items-center">
         <Link to="/" className="uppercase text-3xl m-2">
           <span className="text-primary border-primary border-2 px-2 xs:border-0">l<span className="hidden xs:inline">innus</span></span><span className="bg-primary border-primary border-2 text-white px-2">f<span  className="hidden xs:inline">ritid</span></span>
         </Link>
