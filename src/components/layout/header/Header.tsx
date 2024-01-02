@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import CartButton from '../../buttons/CartButton.tsx';
+import SearchInput from '../../searchInput/SearchInput.tsx';
 
 export function Header() {
 return (
@@ -16,7 +17,7 @@ return (
           <span className="text-primary border-primary border-2 px-2 xs:border-0">l<span className="hidden xs:inline">innus</span></span><span className="bg-primary border-primary border-2 text-white px-2">f<span  className="hidden xs:inline">ritid</span></span>
         </Link>
         <div className="w-1/2">
-          <input aria-label="Search product" type="search" placeholder="Search" className="p-2 w-full max-w-xl shadow border-1 rounded"/>
+          <SearchInput />
         </div>
         <CartButton />
       </div>
