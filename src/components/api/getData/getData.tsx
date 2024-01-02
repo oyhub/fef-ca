@@ -20,7 +20,7 @@ export type Data = {
 }
 
 function GetData(url: string, maxLength: null | number = null) {
-  const [data, setData] = useState<Data[] | null>(null);
+  const [data, setData] = useState<Data | Data[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
