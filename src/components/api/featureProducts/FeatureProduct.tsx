@@ -1,4 +1,5 @@
 import { Data } from '../getData/getData.tsx';
+import { Link } from 'react-router-dom';
 
 type FeatureProductProps = {
   data: Data;
@@ -10,7 +11,7 @@ export function FeatureProduct({ data }: FeatureProductProps) {
     image = 'https://placehold.co/600x400?text=Missing+Image'
   }
   return (
-    <div className="mb-8 w-72 flex flex-col">
+    <Link to={`product/${data.id}`} className="mb-8 w-72 flex flex-col">
       <div className="h-72 w-full pb-3">
         <img src={image} alt="" />
       </div>
@@ -24,7 +25,7 @@ export function FeatureProduct({ data }: FeatureProductProps) {
       ) : (
         <p className="mt-5 font-heading font-semibold text-2xl text-primary text-right">{data.price},-</p>
       )}
-    </div>
+    </Link>
   )
 }
 
