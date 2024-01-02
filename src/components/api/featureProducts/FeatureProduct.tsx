@@ -12,7 +12,7 @@ export function FeatureProduct({ data }: FeatureProductProps) {
   return (
     <div className="mb-8 w-72 flex flex-col">
       <div className="h-72 w-full pb-3">
-        <img src={image} alt="" className="" />
+        <img src={image} alt="" />
       </div>
       <h3 className="text-primary font-heading text-lg uppercase font-semibold">{data.title}</h3>
       {data.description && <p className="flex-1">{data.description}</p>}

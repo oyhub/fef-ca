@@ -11,7 +11,7 @@ export function FeatureProducts() {
   if (data) return (
     <div>
       <h2 className="font-heading font-semibold text-primary text-2xl pb-3">Featured Products</h2>
-      <div className="flex flex-wrap gap-5 justify-between">
+      <div className="flex flex-wrap gap-5 justify-between max-w-7xl mx-auto">
         {data && data.map(product => (
           <FeatureProduct key={product.id} data={product} />
         ))}

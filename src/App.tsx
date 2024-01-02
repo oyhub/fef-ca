@@ -6,6 +6,7 @@ import Home from './pages/Home.tsx';
 import NotFound from './pages/NotFound.tsx';
 import Checkout from './pages/Checkout.tsx';
 import ContactPage from './pages/Contact.tsx';
+import Product from './pages/Product.tsx';
 
 function Layout() {
   return (
@@ -25,6 +26,7 @@ function App() {
     <Routes>
       <Route path="/" element={ <Layout /> } >
         <Route index element={ <Home /> } />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/checkout" element={ <Checkout /> } />
         <Route path="/contact" element={ <ContactPage /> } />
         <Route path="*" element={ <NotFound /> } />

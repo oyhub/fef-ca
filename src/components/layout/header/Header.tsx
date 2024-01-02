@@ -3,7 +3,7 @@ import CartButton from '../../buttons/CartButton.tsx';
 
 export function Header() {
 return (
-  <header>
+  <header className="mb-5">
     <div className="text-xs font-heading uppercase w-screen bg-primary text-white p-2">
       <div className="container px-3 flex justify-end gap-8">
         <Link to="/contact" className="hover:underline">Contact</Link>
