@@ -4,7 +4,7 @@ export function Footer() {
   const thisYear = new Date().getFullYear();
   return (
     <footer className="bg-primary text-white pt-4">
-      <div className="container">
+      <div className="container px-3">
         <div className="flex justify-between">
           <div className="font-heading text-sm p-3">
             <h2 className="uppercase text-xl pb-4">Linnus Fritid</h2>

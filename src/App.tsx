@@ -6,12 +6,13 @@ import Home from './pages/Home.tsx';
 import NotFound from './pages/NotFound.tsx';
 import Checkout from './pages/Checkout.tsx';
 import ContactPage from './pages/Contact.tsx';
+import Product from './pages/Product.tsx';
 
 function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="flex-grow container mx-auto mt-4">
+      <div className="flex-grow container mx-auto px-3 mt-4">
         <Outlet />
       </div>
       <Footer />
@@ -25,6 +26,7 @@ function App() {
     <Routes>
       <Route path="/" element={ <Layout /> } >
         <Route index element={ <Home /> } />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/checkout" element={ <Checkout /> } />
         <Route path="/contact" element={ <ContactPage /> } />
         <Route path="*" element={ <NotFound /> } />
