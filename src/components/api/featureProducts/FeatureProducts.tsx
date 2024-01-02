@@ -8,7 +8,7 @@ export function FeatureProducts() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>An error occurred: {error.message}</div>;
 
-  if (data) return (
+  if (Array.isArray(data)) return (
     <div>
       <h2 className="font-heading font-semibold text-primary text-2xl pb-3">Featured Products</h2>
       <div className="flex flex-wrap gap-5 justify-between max-w-7xl mx-auto">
