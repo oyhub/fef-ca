@@ -11,7 +11,7 @@ export function ShowReviews( {reviews}: ItemReview ) {
   return (
     <>
     {latestReviews.map((review, index) => (
-      <div key={index}>
+      <div key={index} className="my-8">
         <p>Rating: {review.rating}</p>
         <p>Username: {review.username}</p>
         <div>
