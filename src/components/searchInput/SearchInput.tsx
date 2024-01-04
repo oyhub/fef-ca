@@ -5,23 +5,24 @@ type SearchInputProps = {
   data: Data[];
 };
 
-export function SearchInput({ data }: SearchInputProps) {
+export function SearchInput({ data = [] }: SearchInputProps) {
   const { searchTerm, setSearchTerm, setSearchResults } = useSearchStore();
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSearchTerm = event.target.value;
+    const lowerCaseTrimmedSearchTerm = newSearchTerm.toLowerCase().trim()
     setSearchTerm(newSearchTerm);
 
     const results = data.filter(item =>
-      item.title.includes(newSearchTerm) ||
-      (item.tags && item.tags.some(tag => tag.includes(newSearchTerm)))
-    ).map(item => ({
-      title: item.title,
-      tags: item.tags || []
-    }));
+      item.title.toLowerCase().trim().includes(lowerCaseTrimmedSearchTerm) ||
+      (item.tags && item.tags.some(tag => tag.toLowerCase().trim().includes(lowerCaseTrimmedSearchTerm)))
+    );
 
-    setSearchResults(results);
-    console.log(searchTerm)
+    if (newSearchTerm === ""){
+      setSearchResults([])
+    } else {
+      setSearchResults(results);
+    }
   };
 
   return (

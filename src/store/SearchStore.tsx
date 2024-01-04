@@ -1,8 +1,10 @@
 import { create } from 'zustand';
+import { Data } from '../components/api/getData/getData.tsx';
 
 export type DataItem = {
+  id: string;
   title: string;
-  tags: string[];
+  tags?: string[];
 };
 
 export type DataStructure = {
@@ -12,8 +14,8 @@ export type DataStructure = {
 export type SearchStoreState = {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  searchResults: DataItem[];
-  setSearchResults: (results: DataItem[]) => void;
+  searchResults: Data[];
+  setSearchResults: (results: Data[]) => void;
 };
 
 export const useSearchStore = create<SearchStoreState>((set) => ({

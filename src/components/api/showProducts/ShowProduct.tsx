@@ -10,7 +10,7 @@ export function ShowProduct({ data }: ProductData) {
   if (!image) {
     image = 'https://placehold.co/600x400?text=Missing+Image'
   }
-  console.log(data.tags)
+
   return (
     <Link to={`product/${data.id}`} className="w-full flex flex-col text-white bg-primary p-2 group hover:bg-secondary">
       <div className="h-72 pb-3 m-2">
