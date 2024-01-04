@@ -15,7 +15,7 @@ export type Data = {
   discountedPrice?: number,
   imageUrl?: string,
   rating?: number,
-  tags?: [string],
+  tags?: string[],
   reviews?: Review[]
 }
 

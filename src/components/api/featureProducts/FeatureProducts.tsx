@@ -1,9 +1,13 @@
 import GetData from '../getData/getData.tsx';
 import { BASE_URL } from '../../../constants/Constants.tsx';
 import FeatureProduct from './FeatureProduct.tsx';
+import useSearchStore from '../../../store/SearchStore.tsx';
 
 export function FeatureProducts() {
   const { data, loading, error } = GetData(BASE_URL, 3);
+  const searchTerm = useSearchStore(state => state.searchTerm);
+
+  if (searchTerm) return null;
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>An error occurred: {error.message}</div>;

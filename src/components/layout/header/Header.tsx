@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom';
 import CartButton from '../../buttons/CartButton.tsx';
+import SearchInput from '../../searchInput/SearchInput.tsx';
+import useDataStore from '../../../store/DataStore.tsx';
+import useSearchStore from '../../../store/SearchStore.tsx';
 
 export function Header() {
+  const data = useDataStore(state => state.data);
+  const setSearchResults = useSearchStore(state => state.setSearchResults);
+  const setSearchTerm = useSearchStore(state => state.setSearchTerm);
+
+  const handleLinkClick = () => {
+    setSearchResults([]);
+    setSearchTerm("");
+  };
+
 return (
   <header className="mb-5">
     <div className="text-xs font-heading uppercase w-screen bg-primary text-white p-2">
@@ -12,11 +24,11 @@ return (
     </div>
     <div>
       <div className="container px-3 flex justify-between items-center">
-        <Link to="/" className="uppercase text-3xl m-2">
+        <Link onClick={handleLinkClick} to="/" className="uppercase text-3xl m-2">
           <span className="text-primary border-primary border-2 px-2 xs:border-0">l<span className="hidden xs:inline">innus</span></span><span className="bg-primary border-primary border-2 text-white px-2">f<span  className="hidden xs:inline">ritid</span></span>
         </Link>
         <div className="w-1/2">
-          <input aria-label="Search product" type="search" placeholder="Search" className="p-2 w-full max-w-xl shadow border-1 rounded"/>
+          <SearchInput data={data} />
         </div>
         <CartButton />
       </div>
