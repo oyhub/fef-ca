@@ -11,7 +11,7 @@ export type Data = {
   id?: string,
   title: string,
   description?: string,
-  price?: number,
+  price: number,
   discountedPrice?: number,
   imageUrl?: string,
   rating?: number,

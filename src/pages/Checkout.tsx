@@ -1,5 +1,48 @@
+import useCartStore from '../store/CartStore.tsx';
+import { RemoveCircleOutline } from '@mui/icons-material';
+import { Data } from '../components/api/getData/getData.tsx';
+import { Link } from 'react-router-dom';
+
 export function Checkout() {
-  return <div>Checkout page</div>
+  const cart = useCartStore(state => state.cart);
+  const removeFromCart = useCartStore(state => state.removeFromCart);
+  const amount = 1;
+
+  const handleRemoveClick = (product: Data) => () => removeFromCart(product);
+
+
+  return (
+    <div>
+      <h1 className="font-heading font-semibold text-xl text-primary mb-8">Shopping cart</h1>
+      <div className="flex flex-col gap-6">
+        {cart.map((product, index) => (
+          <div key={index} className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_3fr] md:grid-cols-[1fr_2fr_2fr] xl:grid-cols-[1fr_4fr_2fr] gap-6 border-b-4 pb-3">
+            <img src={product.imageUrl} alt="" className="object-cover max-h-40 aspect-square xl:w-40"/>
+            <div>
+              <Link to={`/product/${product.id}`} className="hover:underline"><h2 className="font-heading text-lg text-primary">{product.title}</h2></Link>
+              <p>{product.description}</p>
+            </div>
+            <div className="flex gap-3 col-span-2 sm:col-span-1 sm:justify-between">
+              <div className="flex flex-col gap-2">
+                <span>Amount</span>
+                <span>1</span>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span>Price</span>
+                {product.discountedPrice && <span>{product.discountedPrice},-</span>}
+                <span className={product.discountedPrice ? 'line-through text-red-600 text-sm' : ''}>{product.price},-</span>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span>Total</span>
+                <span className="font-semibold text-primary">{product.discountedPrice ? (product.discountedPrice * amount) : (product.price * amount)},-</span>
+              </div>
+              <button onClick={handleRemoveClick(product)} className="self-start"><RemoveCircleOutline sx={{ color: '#dc2626' }} /></button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default Checkout;
