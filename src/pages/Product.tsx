@@ -3,19 +3,23 @@ import { BASE_URL } from '../constants/Constants.tsx';
 import { Link, useParams } from 'react-router-dom';
 import ShowReviews from '../components/showReviews/showReviews.tsx';
 import { ArrowBack } from '@mui/icons-material';
+import useCartStore from '../store/CartStore.tsx';
 
 export function Product() {
   const { id } = useParams()
   const url = BASE_URL + '/' + id;
   const { data, loading, error } = GetData(url);
 
+  const addToCart = useCartStore(state => state.addToCart);
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>An error occurred: {error.message}</div>;
   if (!data) return <div>No data found</div>;
 
   if (!Array.isArray(data)) {
-
+    const handleAddToCart = () => addToCart(data);
     const reviews = data.reviews ? data.reviews : [];
+
     return (
       <>
         <Link to="/" className="block mb-2 hover:underline"><ArrowBack fontSize="small"/> Back</Link>
@@ -32,7 +36,7 @@ export function Product() {
               ) : (
                 <p className="font-heading font-semibold text-2xl">{data.price},-</p>
               )}
-              <button className="bg-primary text-white px-5 py-3 rounded uppercase font-semibold mb-8 xs:mb-0 hover:bg-secondary hover:underline">Add to cart</button>
+              <button onClick={handleAddToCart} className="bg-primary text-white px-5 py-3 rounded uppercase font-semibold mb-8 xs:mb-0 hover:bg-secondary hover:underline">Add to cart</button>
             </div>
             <p>{data.description}</p>
             <ShowReviews reviews={reviews} />
