@@ -11,7 +11,7 @@ export type Data = {
   id?: string,
   title: string,
   description?: string,
-  price?: number,
+  price: number,
   discountedPrice?: number,
   imageUrl?: string,
   rating?: number,
@@ -20,7 +20,7 @@ export type Data = {
 }
 
 function GetData(url: string, maxLength: null | number = null) {
-  const [data, setData] = useState<Data | Data[] | null>(null);
+  const [data, setData] = useState<Data | Data[] | []>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 

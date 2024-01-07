@@ -8,7 +8,8 @@ export default {
     extend: {
       colors: {
         primary: "#1A4C7D",
-        secondary: "#3E84C9"
+        secondary: "#3E84C9",
+        danger: "#DC2626"
       },
       container: {
         center: true
