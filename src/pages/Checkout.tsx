@@ -10,12 +10,23 @@ export function Checkout() {
 
   const handleRemoveClick = (product: Data) => () => removeFromCart(product);
 
+  const totalSum = cart.reduce((acc, product) => {
+    const priceToUse = product.discountedPrice ? product.discountedPrice : product.price;
+    return acc + priceToUse;
+  }, 0);
+
 
   return (
     <div>
       <h1 className="font-heading font-semibold text-xl text-primary mb-8">Shopping cart</h1>
       <div className="flex flex-col gap-6">
-        {cart.map((product, index) => (
+        {cart.length === 0 ? (
+          <div>
+            <p className="mb-8">Cart is empty. Come see what we have to offer.</p>
+            <Link to="/" className="bg-primary text-white px-5 py-3 rounded uppercase font-semibold mb-8 xs:mb-0 hover:bg-secondary hover:underline">shop now</Link>
+          </div>
+        ) : (
+          cart.map((product, index) => (
           <div key={index} className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_3fr] md:grid-cols-[1fr_2fr_2fr] xl:grid-cols-[1fr_4fr_2fr] gap-6 border-b-4 pb-3">
             <img src={product.imageUrl} alt="" className="object-cover max-h-40 aspect-square xl:w-40"/>
             <div>
@@ -39,7 +50,13 @@ export function Checkout() {
               <button onClick={handleRemoveClick(product)} className="self-start"><RemoveCircleOutline sx={{ color: '#dc2626' }} /></button>
             </div>
           </div>
-        ))}
+        )))}
+        {cart.length > 0 && (
+          <div className="self-end pr-3 flex flex-col justify-center gap-4">
+            <p>Total sum: <span className="font-semibold text-primary">{totalSum.toFixed(2)},-</span></p>
+            <Link to="/success" className="text-center bg-primary text-white px-5 py-3 rounded uppercase font-semibold mb-8 xs:mb-0 hover:bg-secondary hover:underline">Checkout</Link>
+          </div>
+        )}
       </div>
     </div>
   )
