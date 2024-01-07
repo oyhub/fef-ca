@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import CartButton from '../../buttons/CartButton.tsx';
 import SearchInput from '../../searchInput/SearchInput.tsx';
 import useDataStore from '../../../store/DataStore.tsx';
@@ -8,6 +8,7 @@ export function Header() {
   const data = useDataStore(state => state.data);
   const setSearchResults = useSearchStore(state => state.setSearchResults);
   const setSearchTerm = useSearchStore(state => state.setSearchTerm);
+  const location = useLocation()
 
   const handleLinkClick = () => {
     setSearchResults([]);
@@ -28,7 +29,9 @@ return (
           <span className="text-primary border-primary border-2 px-2 xs:border-0">l<span className="hidden xs:inline">innus</span></span><span className="bg-primary border-primary border-2 text-white px-2">f<span  className="hidden xs:inline">ritid</span></span>
         </Link>
         <div className="w-1/2">
+          {location.pathname === '/' && (
           <SearchInput data={data} />
+            )}
         </div>
         <CartButton />
       </div>
