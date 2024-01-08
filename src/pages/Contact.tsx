@@ -1,6 +1,7 @@
 import { yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
+import useDocumentTitle from '../components/hooks/useDocumentTitle.tsx';
 
 type formData = {
   name: string;
@@ -30,6 +31,7 @@ const schema = yup
   });
 
 export function ContactPage() {
+  useDocumentTitle('Contact | Linnus Fritid');
   const {
     register,
     handleSubmit,

@@ -2,8 +2,11 @@ import useCartStore from '../store/CartStore.tsx';
 import { RemoveCircleOutline } from '@mui/icons-material';
 import { Data } from '../components/api/getData/getData.tsx';
 import { Link } from 'react-router-dom';
+import useDocumentTitle from '../components/hooks/useDocumentTitle.tsx';
 
 export function Checkout() {
+  useDocumentTitle('Shopping cart | Linnus Fritid');
+
   const cart = useCartStore(state => state.cart);
   const removeFromCart = useCartStore(state => state.removeFromCart);
   const amount = 1;

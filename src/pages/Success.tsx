@@ -1,7 +1,9 @@
 import useCartStore from '../store/CartStore.tsx';
 import { Link } from 'react-router-dom';
+import useDocumentTitle from '../components/hooks/useDocumentTitle.tsx';
 
 export function Success() {
+  useDocumentTitle('Order confirmed | Linnus Fritid');
   const clearCart = useCartStore(state => state.clearCart);
   clearCart();
 
