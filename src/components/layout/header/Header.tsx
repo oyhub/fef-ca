@@ -26,7 +26,7 @@ return (
     <div>
       <div className="container px-3 flex justify-between items-center">
         <Link onClick={handleLinkClick} to="/" className="uppercase text-3xl m-2">
-          <span className="text-primary border-primary border-2 px-2 xs:border-0">l<span className="hidden xs:inline">innus</span></span><span className="bg-primary border-primary border-2 text-white px-2">f<span  className="hidden xs:inline">ritid</span></span>
+          <span className="text-primary border-primary border-2 px-2 xs:border-0">b<span className="hidden xs:inline">lue</span></span><span className="bg-primary border-primary border-2 text-white px-2">l<span  className="hidden xs:inline">ion</span></span>
         </Link>
         <div className="w-1/2">
           {location.pathname === '/' && (

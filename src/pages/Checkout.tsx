@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import useDocumentTitle from '../components/hooks/useDocumentTitle.tsx';
 
 export function Checkout() {
-  useDocumentTitle('Shopping cart | Linnus Fritid');
+  useDocumentTitle('Shopping cart | Blue Lion');
 
   const cart = useCartStore(state => state.cart);
   const removeFromCart = useCartStore(state => state.removeFromCart);

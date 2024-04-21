@@ -3,7 +3,7 @@ import ShowProducts from '../components/api/showProducts/ShowProducts.tsx';
 import useDocumentTitle from '../components/hooks/useDocumentTitle.tsx';
 
 export function Home() {
-  useDocumentTitle('Linnus Fritid')
+  useDocumentTitle('Blue Lion')
   return (
     <>
       <FeatureProducts />

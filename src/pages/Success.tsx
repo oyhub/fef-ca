@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useDocumentTitle from '../components/hooks/useDocumentTitle.tsx';
 
 export function Success() {
-  useDocumentTitle('Order confirmed | Linnus Fritid');
+  useDocumentTitle('Order confirmed | Blue Lion');
   const clearCart = useCartStore(state => state.clearCart);
   clearCart();
 

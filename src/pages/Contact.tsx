@@ -31,7 +31,7 @@ const schema = yup
   });
 
 export function ContactPage() {
-  useDocumentTitle('Contact | Linnus Fritid');
+  useDocumentTitle('Contact | Blue Lion');
   const {
     register,
     handleSubmit,

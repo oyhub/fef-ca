@@ -7,7 +7,7 @@ import useCartStore from '../store/CartStore.tsx';
 import useDocumentTitle from '../components/hooks/useDocumentTitle.tsx';
 
 export function Product() {
-  useDocumentTitle('Linnus Fritid');
+  useDocumentTitle('Blue Lion');
   const { id } = useParams()
   const url = BASE_URL + '/' + id;
   const { data, loading, error } = GetData(url);
@@ -21,7 +21,7 @@ export function Product() {
   if (!Array.isArray(data)) {
     const handleAddToCart = () => addToCart(data);
     const reviews = data.reviews ? data.reviews : [];
-    document.title = `${data.title} | Linnus Fritid`;
+    document.title = `${data.title} | Blue Lion`;
 
     return (
       <>
